@@ -1,0 +1,25 @@
+[package]
+name = "pomodoro"
+version = "1.0.0"
+description = "一个极简透明的桌面番茄钟"
+authors = ["you"]
+edition = "2021"
+rust-version = "1.77.2"
+
+[lib]
+name = "pomodoro_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-notification = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+dirs = "5.0"
+
+[[bin]]
+name = "pomodoro"
+path = "src/main.rs"
